@@ -1,0 +1,37 @@
+
+.ant-col {
+    margin-bottom: 10px;
+}
+.left_box {
+    background: #d3dce6;
+    width: 100%;
+    height: 200px;
+border-radius: 10px;
+}
+
+.center_box {
+    background: #e5e9f2;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.right_box {
+    background: #d3dce6;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+.copy_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.copy_text p{
+    margin: 0%;
+
+}
+#a{
+    color: black;
+}
