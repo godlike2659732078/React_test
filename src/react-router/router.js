@@ -7,22 +7,27 @@ import Test from "../pages/test/test";
 //引入一些模块
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
-function router() {
-  return (
-    <Router>
-      <Route path="/" render={() => <Redirect to="/home" />}></Route>
-      <Route path="/home" component={Home} />
-
-      <Route
-        path="/about"
-        render={() => (
-          <About>
-            <Route path="/about/test" component={Test} />
-          </About>
-        )}
-      ></Route>
-    </Router>
-  );
-}
+let router = [
+  {
+    path: "/", //首页默认加载的页面
+    componentName: Home,
+    exact: true, //是否为严格模式
+  },
+  {
+    path: "/home", //首页默认加载的页面
+    componentName: Home,
+    exact: true, //是否为严格模式
+  },
+  {
+    path: "/about", //首页默认加载的页面
+    componentName: About,
+    exact: true, //是否为严格模式
+  },
+  {
+    path: "/test", //首页默认加载的页面
+    componentName: Test,
+    exact: true, //是否为严格模式
+  },
+];
 
 export default router;

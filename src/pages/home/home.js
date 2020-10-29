@@ -16,13 +16,23 @@ function handleCopy(value) {
   } else message.error("複製失敗，請手動複製");
 }
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+    this.state = {
+      a: 1,
+    };
+  }
+
+  componentDidMount() {
+    console.log(this);
+  }
+
   render() {
     return (
       <div>
         <div className="copy_text">
-          <Link to="/about">
-            <p id="a">123456789</p>
-          </Link>
+          <p id="a">123456789</p>
 
           <Icon
             type="copy"

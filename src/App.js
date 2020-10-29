@@ -1,27 +1,237 @@
 import React from "react";
-import logo from "./logo.svg";
+import ReactDOM, { Component } from "react-dom";
+import Acount from "./components/acount/acount";
 import "./App.css";
+import "antd/dist/antd.css";
+// import Routers from "./react-router/router";
+import { Layout, Menu, Breadcrumb, Icon, Dropdown } from "antd";
+// import Home from "./pages/home/home";
+// import About from "./pages/about/about";
+// import Test from "./pages/test/test";
+import routes from "./react-router/router_test";
+//引入一些模块
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import { connect } from "react-redux";
+import { fixControlledValue } from "antd/lib/input/Input";
+const { Header, Content, Footer } = Layout;
 
-function Apps() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>1111111111</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function Aaa() {
+  return <h1>111111111</h1>;
 }
 
-export default Apps;
+function tick() {}
+export default class App extends React.Component {
+  //
+  constructor(props) {
+    super(props);
+    console.log(this);
+    console.log(window.location.pathname);
+    this.state = {
+      path: window.location.pathname,
+      show: true,
+    };
+  }
+  handleClientW = (width, num) => {
+    if (width < num) {
+      this.setState({
+        show: false,
+      });
+    } else {
+      this.setState({
+        show: true,
+      });
+    }
+  };
+  handleResize = (e) => {
+    let e_width = e.target.innerWidth;
+    this.handleClientW(e_width, 700);
+    // console.log('浏览器窗口大小改变事件', e.target.innerWidth);
+  };
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize.bind(this));
+  }
+  // 渲染完成
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize.bind(this)); //监听窗口大小改变
+    let clientW = document.documentElement.clientWidth;
+    this.handleClientW(clientW, 1040);
+    if (window.location.pathname == "/") {
+      this.setState({
+        //修改初始值
+        path: "/home",
+      });
+    }
+    if (window.history && window.history.pushState) {
+      console.log(window.location.pathname);
+    }
+  }
+  gotoHome(params) {
+    this.setState({
+      //修改初始值
+      path: window.location.pathname,
+    });
+  }
+
+  render() {
+    const menu = (
+      <Menu>
+        <Menu.Item>CN</Menu.Item>
+        <Menu.Item>EN</Menu.Item>
+        <Menu.Item>HN</Menu.Item>
+      </Menu>
+    );
+    return (
+      <div>
+        <Router>
+          <Layout className="layout">
+            <Header
+              style={{ padding: "0 30px", height: "auto" }}
+              className={this.state.show == true ? "" : "hide"}
+            >
+              <div className="header">
+                <div className="header_left">
+                  <img
+                    style={{ width: "50px", height: "50px" }}
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
+                    alt=""
+                  />
+                  <Menu
+                    mode="horizontal"
+                    defaultSelectedKeys={this.state.path}
+                    selectedKeys={[this.state.path]}
+                  >
+                    <Menu.Item
+                      key="/home"
+                      style={{ width: "100px" }}
+                      onClick={this.gotoHome.bind(this)}
+                    >
+                      <Link to="/home">首页</Link>
+                    </Menu.Item>
+                    <Menu.Item
+                      key="/user"
+                      style={{ width: "100px" }}
+                      onClick={this.gotoHome.bind(this)}
+                    >
+                      <Link to="/user">农场</Link>
+                    </Menu.Item>
+                    <Menu.Item
+                      key="/shop"
+                      style={{ width: "100px" }}
+                      onClick={this.gotoHome.bind(this)}
+                    >
+                      <Link to="/shop">规则</Link>
+                    </Menu.Item>
+                  </Menu>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    width: "250px",
+                  }}
+                >
+                  <Acount></Acount>
+                  <Dropdown overlay={menu}>
+                    <a className="ant-dropdown-link" href="#">
+                      LANGUAGE <Icon type="down" />
+                    </a>
+                  </Dropdown>
+                </div>
+              </div>
+            </Header>
+            <Header
+              style={{ padding: "0 10px", lineHeight: "40px" }}
+              className={this.state.show == false ? "" : "hide"}
+            >
+              <div className="header">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
+                  alt=""
+                />
+                <div  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    width: "200px",
+                  }}>
+                  <Acount></Acount>
+                  <Dropdown overlay={menu}>
+                    <a className="ant-dropdown-link" href="#">
+                      LANGUAGE <Icon type="down" />
+                    </a>
+                  </Dropdown>
+                </div>
+              </div>
+              <div className="navBox">
+                <Menu
+                  mode="horizontal"
+                  defaultSelectedKeys={this.state.path}
+                  selectedKeys={[this.state.path]}
+                >
+                  <Menu.Item key="/home" onClick={this.gotoHome.bind(this)}>
+                    <Link to="/home">首页</Link>
+                  </Menu.Item>
+                  <Menu.Item key="/user" onClick={this.gotoHome.bind(this)}>
+                    <Link to="/user">农场</Link>
+                  </Menu.Item>
+                  <Menu.Item key="/shop" onClick={this.gotoHome.bind(this)}>
+                    <Link to="/shop">规则</Link>
+                  </Menu.Item>
+                </Menu>
+              </div>
+            </Header>
+            <Content style={{ padding: "0 10%" }}>
+              <Breadcrumb style={{ margin: "16px 0" }}>
+                <Breadcrumb.Item>
+                  {" "}
+                  <Icon type="link"></Icon>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>List</Breadcrumb.Item>
+                <Breadcrumb.Item>App</Breadcrumb.Item>
+              </Breadcrumb>
+              {routes.map((route, key) => {
+                if (route.exact) {
+                  return (
+                    <Route
+                      key={key}
+                      exact
+                      path={route.path}
+                      // route.component     value.component   <User  {...props}  routes={route.routes} />
+                      render={(props) => (
+                        // pass the sub-routes down to keep nesting
+                        <route.component {...props} routes={route.routes} />
+                      )}
+                    />
+                  );
+                } else {
+                  return (
+                    <Route
+                      key={key}
+                      path={route.path}
+                      render={(props) => (
+                        // pass the sub-routes down to keep nesting
+                        <route.component {...props} routes={route.routes} />
+                      )}
+                    />
+                  );
+                }
+              })}
+            </Content>
+            <Footer style={{ textAlign: "center" }}>
+              Ant Design ©2016 Created by Ant UED
+            </Footer>
+          </Layout>
+        </Router>
+        <div>
+          <header className="title"></header>
+        </div>
+      </div>
+    );
+  }
+}
