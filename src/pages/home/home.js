@@ -1,45 +1,19 @@
 //home.js
 import React, { Component } from "react";
 import "./home.css";
-import { Row, Col, Icon, message } from "antd";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Link,
-} from "react-router-dom";
-import copy from "copy-to-clipboard";
-
-function handleCopy(value) {
-  if (copy(value)) {
-    message.success("複製成功");
-  } else message.error("複製失敗，請手動複製");
-}
+import { Row, Col,  } from "antd";
+import Neck from "../../components/neck/neck";
 export default class Home extends Component {
   constructor(props) {
     super(props);
     console.log(this.props);
     this.state = {
-      a: 1,
     };
   }
-
-  componentDidMount() {
-    console.log(this);
-  }
-
   render() {
     return (
       <div>
-        <div className="copy_text">
-          <p id="a">123456789</p>
-
-          <Icon
-            type="copy"
-            onClick={() => handleCopy(document.getElementById("a").innerHTML)}
-          />
-        </div>
-
+        <Neck></Neck>
         <Row gutter={20}>
           <Col xs={24} sm={24} md={12} lg={8} xl={8}>
             <div className="left_box"></div>

@@ -1,36 +1,22 @@
 import React from "react";
-import ReactDOM, { Component } from "react-dom";
+import logo from "./assets/img/logo.png";
 import Acount from "./components/acount/acount";
 import "./App.css";
 import "antd/dist/antd.css";
-// import Routers from "./react-router/router";
 import { Layout, Menu, Breadcrumb, Icon, Dropdown } from "antd";
-// import Home from "./pages/home/home";
-// import About from "./pages/about/about";
-// import Test from "./pages/test/test";
 import routes from "./react-router/router_test";
 //引入一些模块
 import {
   BrowserRouter as Router,
   Route,
   Link,
-  Redirect,
 } from "react-router-dom";
-import { connect } from "react-redux";
-import { fixControlledValue } from "antd/lib/input/Input";
 const { Header, Content, Footer } = Layout;
-
-function Aaa() {
-  return <h1>111111111</h1>;
-}
-
-function tick() {}
 export default class App extends React.Component {
   //
   constructor(props) {
     super(props);
-    console.log(this);
-    console.log(window.location.pathname);
+
     this.state = {
       path: window.location.pathname,
       show: true,
@@ -60,17 +46,15 @@ export default class App extends React.Component {
     window.addEventListener("resize", this.handleResize.bind(this)); //监听窗口大小改变
     let clientW = document.documentElement.clientWidth;
     this.handleClientW(clientW, 1040);
-    if (window.location.pathname == "/") {
+    if (window.location.pathname === "/") {
       this.setState({
         //修改初始值
         path: "/home",
       });
     }
-    if (window.history && window.history.pushState) {
-      console.log(window.location.pathname);
-    }
   }
   gotoHome(params) {
+    console.log(params);
     this.setState({
       //修改初始值
       path: window.location.pathname,
@@ -91,20 +75,16 @@ export default class App extends React.Component {
           <Layout className="layout">
             <Header
               style={{ padding: "0 30px", height: "auto" }}
-              className={this.state.show == true ? "" : "hide"}
+              className={this.state.show === true ? "" : "hide"}
             >
               <div className="header">
                 <div className="header_left">
                   <img
                     style={{ width: "50px", height: "50px" }}
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
+                    src={logo}
                     alt=""
                   />
-                  <Menu
-                    mode="horizontal"
-                    defaultSelectedKeys={this.state.path}
-                    selectedKeys={[this.state.path]}
-                  >
+                  <Menu mode="horizontal" selectedKeys={[this.state.path]}>
                     <Menu.Item
                       key="/home"
                       style={{ width: "100px" }}
@@ -147,19 +127,18 @@ export default class App extends React.Component {
             </Header>
             <Header
               style={{ padding: "0 10px", lineHeight: "40px" }}
-              className={this.state.show == false ? "" : "hide"}
+              className={this.state.show === false ? "" : "hide"}
             >
               <div className="header">
-                <img
-                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
-                  alt=""
-                />
-                <div  style={{
+                <img src={logo} alt="" />
+                <div
+                  style={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
                     width: "200px",
-                  }}>
+                  }}
+                >
                   <Acount></Acount>
                   <Dropdown overlay={menu}>
                     <a className="ant-dropdown-link" href="#">

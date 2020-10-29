@@ -1,0 +1,25 @@
+.neck_box {
+    display: flex;
+    justify-content: center;
+}
+
+.title_text {
+    font-size: 2vw;
+    text-align: center;
+    color: "blue"
+}
+.neck_logo{
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+.text_{
+    text-align: center;
+    margin: 0%;
+}
+.dragon{
+    background: #e5e9f2;
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+}

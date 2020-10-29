@@ -5,7 +5,6 @@ import User from "../pages/User/user";
 let routes = [
   {
     path: "/",
-    
     component: Home,
     exact: true,
    
