@@ -1,6 +1,7 @@
-import Home from "../pages/home/home";
-import Shop from "../pages/Shop/shop";
-import User from "../pages/User/user";
+import Home from "../pages/home/home.js";
+import Rules from "../pages/rules/rules";
+import Forest from "../pages/forest/forest";
+import ForestDetail from "../pages/forestDetail/forestDetail"
 
 let routes = [
   {
@@ -15,12 +16,16 @@ let routes = [
    
   },
   {
-    path: "/shop",
-    component: Shop,
+    path: "/rules",
+    component: Rules,
   },
   {
-    path: "/user",
-    component: User,
+    path: "/forest",
+    component: Forest,
+  },
+  {
+    path: "/forestDetail",
+    component: ForestDetail,
   },
   
 ];

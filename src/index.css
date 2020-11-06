@@ -1,10 +1,12 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -12,9 +14,6 @@ code {
     monospace;
 }
 
-.a {
-  background: #000;
-}
 .locale-components {
   border-top: 1px solid #d9d9d9;
   padding-top: 16px;
@@ -24,19 +23,21 @@ code {
   margin: 16px 0;
 }
 
-.example > * {
+.example>* {
   margin-right: 8px;
 }
 
 .change-locale {
   margin-bottom: 16px;
 }
-.box{
+
+.box {
   display: flex;
   list-style: none;
   justify-content: space-around;
 }
-.box li{
+
+.box li {
   display: flex;
 }
 

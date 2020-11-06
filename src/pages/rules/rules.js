@@ -3,6 +3,10 @@ import React from "react";
 export default class Shop extends React.Component {
   constructor(props){
     super(props)
+    this.props.onRef(this);
+  }
+  componentDidMount() {
+
   }
   render() {
     return (

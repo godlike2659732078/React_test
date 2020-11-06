@@ -1,28 +1,26 @@
 import React from "react";
-import logo from "./assets/img/logo.png";
-import Acount from "./components/wallet/wallet";
-import "./App.css";
+import logo from "../../assets/img/logo.png";
+import Acount from "../acount/acount";
+import "./header.css";
 import "antd/dist/antd.css";
-import ENIcon from "./assets/img/english.png";
-import HKIcon from "./assets/img/hongk.png";
 import { Layout, Menu, Breadcrumb, Icon, Dropdown } from "antd";
-import routes from "./react-router/router_test";
-//引入路由组件
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import routes from "../../react-router/router_test";
+//引入一些模块
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const { Header, Content, Footer } = Layout;
-export default class App extends React.Component {
+export default class Pages extends React.Component {
   //
   constructor(props) {
     super(props);
-
+console.log(this.props)
     this.state = {
       path: window.location.pathname,
       show: true,
       Url: [
-        { id: 1, name: "Telegram", url: "www.baidu.com" },
-        { id: 2, name: "Discord", url: "#" },
-        { id: 3, name: "Twitter", url: "#" },
-        { id: 4, name: "Medium", url: "#" },
+        {id:1 ,name: "Telegram", url: "www.baidu.com" },
+        {id:2 ,name: "Discord", url: "#" },
+        {id:3 ,name: "Twitter", url: "#" },
+        {id:4 ,name: "Medium", url: "#" },
       ],
     };
   }
@@ -64,17 +62,13 @@ export default class App extends React.Component {
       path: window.location.pathname,
     });
   }
+
   render() {
     const menu = (
       <Menu>
-        <Menu.Item>
-          <img className="country" src={ENIcon} alt="" />
-         EN
-        </Menu.Item>
-        <Menu.Item>
-          <img className="country" src={HKIcon} alt="" />
-         CN
-        </Menu.Item>
+        <Menu.Item>CN</Menu.Item>
+        <Menu.Item>EN</Menu.Item>
+        <Menu.Item>HN</Menu.Item>
       </Menu>
     );
     return (
@@ -82,46 +76,37 @@ export default class App extends React.Component {
         <Router>
           <Layout className="layout">
             <Header
-              style={{ padding: "0 30px", height: "68px" }}
+              style={{ padding: "0 30px", height: "auto" }}
               className={this.state.show === true ? "" : "hide"}
             >
               <div className="header">
                 <div className="header_left">
                   <img
-                    style={{ width: "50px", height: "50px",marginRight:"60px" }}
+                    style={{ width: "50px", height: "50px" }}
                     src={logo}
                     alt=""
                   />
-                  <Menu mode="horizontal"  selectedKeys={[this.state.path]}>
+                  <Menu mode="horizontal" selectedKeys={[this.state.path]}>
                     <Menu.Item
                       key="/home"
-                      style={{
-                        width: "100px",
-                        fontSize: "16px",
-                      }}
+                      style={{ width: "100px" }}
                       onClick={this.gotoHome.bind(this)}
                     >
                       <Link to="/home">首页</Link>
                     </Menu.Item>
                     <Menu.Item
-                      key="/forest"
-                      style={{
-                        width: "100px",
-                        fontSize: "16px",
-                      }}
+                      key="/user"
+                      style={{ width: "100px" }}
                       onClick={this.gotoHome.bind(this)}
                     >
-                      <Link to="/forest">农场</Link>
+                      <Link to="/user">农场</Link>
                     </Menu.Item>
                     <Menu.Item
-                      key="/rules"
-                      style={{
-                        width: "100px",
-                        fontSize: "16px",
-                      }}
+                      key="/shop"
+                      style={{ width: "100px" }}
                       onClick={this.gotoHome.bind(this)}
                     >
-                      <Link to="/rules">规则</Link>
+                      <Link to="/shop">规则</Link>
                     </Menu.Item>
                   </Menu>
                 </div>
@@ -173,19 +158,24 @@ export default class App extends React.Component {
                   <Menu.Item key="/home" onClick={this.gotoHome.bind(this)}>
                     <Link to="/home">首页</Link>
                   </Menu.Item>
-                  <Menu.Item key="/forest" onClick={this.gotoHome.bind(this)}>
-                    <Link to="/forest">农场</Link>
+                  <Menu.Item key="/user" onClick={this.gotoHome.bind(this)}>
+                    <Link to="/user">农场</Link>
                   </Menu.Item>
-                  <Menu.Item key="/rules" onClick={this.gotoHome.bind(this)}>
-                    <Link to="/rules">规则</Link>
+                  <Menu.Item key="/shop" onClick={this.gotoHome.bind(this)}>
+                    <Link to="/shop">规则</Link>
                   </Menu.Item>
                 </Menu>
               </div>
             </Header>
-            <Content className="layout_content" style={{ padding: "0 10%" }}>
-              <div className={this.state.show === false ? "hidden" : "ghost"}>
-                <div className="ghostBody"></div>
-              </div>
+            <Content style={{ padding: "0 10%" }}>
+              <Breadcrumb style={{ margin: "16px 0" }}>
+                <Breadcrumb.Item>
+                 
+                  <Icon type="link"></Icon>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>List</Breadcrumb.Item>
+                <Breadcrumb.Item>App</Breadcrumb.Item>
+              </Breadcrumb>
               {routes.map((route, key) => {
                 if (route.exact) {
                   return (
@@ -193,14 +183,10 @@ export default class App extends React.Component {
                       key={key}
                       exact
                       path={route.path}
-                      // route.component     value.component   <forest  {...props}  routes={route.routes} />
+                      // route.component     value.component   <User  {...props}  routes={route.routes} />
                       render={(props) => (
                         // pass the sub-routes down to keep nesting
-                        <route.component
-                          {...props}
-                          routes={route.routes}
-                          onRef={(ref) => (this.child = ref)}
-                        />
+                        <route.component {...props} routes={route.routes} />
                       )}
                     />
                   );
@@ -211,30 +197,19 @@ export default class App extends React.Component {
                       path={route.path}
                       render={(props) => (
                         // pass the sub-routes down to keep nesting
-                        <route.component
-                          {...props}
-                          routes={route.routes}
-                          onRef={(ref) => (this.child = ref)}
-                        />
+                        <route.component {...props} routes={route.routes} />
                       )}
                     />
                   );
                 }
               })}
             </Content>
-            <Footer
-              style={{
-                textAlign: "center",
-
-                width: "100%",
-                boxSizing: "border-box",
-              }}
-            >
+            <Footer style={{ textAlign: "center" }}>
               <ul className="footer_box">
                 {this.state.Url.map(function (val) {
                   return (
                     <li key={val.id}>
-                      <a href={"http://" + val.url}>{val.name}</a>
+                      <a href={"http://"+val.url}>{val.name}</a>
                     </li>
                   );
                 })}

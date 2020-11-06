@@ -1,0 +1,86 @@
+.walletBtn {
+    width: 80%;
+    height: 56px;
+    border: none;
+    border-radius: 12px;
+    color: #6FD1F8;
+    font-size: 18px;
+    font-weight: Bold;
+    background: #FFFFFF;
+
+    box-shadow: 1px 4px 4px #607dff88;
+}
+
+.walletBtn:hover {
+  color: #6FD1F8;
+    cursor: pointer;
+    background: rgb(189, 242, 252);
+}
+
+.ant-modal-header {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.ant-modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-modal-content {
+    height: 440px;
+    border-radius: 20px;
+box-sizing: border-box;
+}
+
+.ant-modal-body {
+    height: 300px;
+    padding: 40px;
+}
+
+.ant-modal-title {
+    text-align: center;
+    color: #BC9A8B;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    position: relative;
+}
+
+.walletLogo {
+    background-color: #f0e7ea;
+    font-size: 36px;
+    height: 80px;
+    width: 80px;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    font-style: normal;
+    box-shadow: inset 4px 4px 8px #c5efff, inset -6px -6px 12px #d7fcff;
+}
+
+.walletLogo img {
+    width: 50px;
+    height: 50px;
+}
+
+.walletBox .balance {
+    font-size: 40px;
+    color: #5672EA;
+    text-align: center;
+    font-weight: bold;
+}
+
+.walletBox p:last-child {
+    font-size: 20px;
+    color: #6FD1F8;
+    text-align: center;
+    font-weight: bold;
+}

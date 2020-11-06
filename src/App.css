@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -13,6 +14,17 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.country {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.ant-menu {
+  background: none;
+  font-size: 16px;
 }
 
 .ant-menu-item,
@@ -56,7 +68,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -74,12 +86,14 @@
   margin-bottom: 2px;
 }
 
-.ant-menu-horizontal{
+.ant-menu-horizontal {
   border-bottom: none;
 }
+
 .ant-layout-header {
   height: auto;
   line-height: 40px;
+  background: none;
 }
 
 .ant-menu-horizontal>.ant-menu-item,
@@ -102,9 +116,15 @@
   border: 1px solid #1890ff;
 }
 
-.ant-layout-header {
-  background: #fff;
+.layout_content {
+  background-image: url(./assets/img/background.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #1890ff;
+  min-height: 1000px;
 }
+
 
 /* .App-link {
   color: #61dafb;
@@ -120,5 +140,98 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+.footer_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.footer_box li {
+  list-style: none;
+  margin: 0px 2vw;
+}
+
+/* 代码整理：大头网 www.datouwang.com */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.ghost {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 100px;
+  left: 200px;
+
+  animation: ghostUpdown 1.5s infinite alternate;
+  -webkit-animation: ghostUpdown 1.5s infinite alternate;
+}
+
+.ghostBody {
+  width: 100px;
+  height: 100px;
+  float: left;
+  background: rgba(255, 255, 255, 0.692);
+  filter: blur(2px);
+  border-radius: 100%;
+
+}
+
+dl,
+ol,
+ul {
+  margin-bottom: 0px;
+}
+
+@keyframes ghostUpdown {
+  from {
+    margin-top: 100px;
+  }
+
+  to {
+    margin-top: 70px;
+  }
+}
+
+@-webkit-keyframes ghostUpdown {
+  from {
+    margin-top: 100px;
+  }
+
+  to {
+    margin-top: 70px;
+  }
+}
+
+@keyframes shadow {
+  from {
+    margin-top: 70px;
+    opacity: 0.3;
+  }
+
+  to {
+    margin-top: 100px;
+    opacity: 0.1;
+  }
+}
+
+@-webkit-keyframes shadow {
+  from {
+    margin-top: 70px;
+    opacity: 0.3;
+  }
+
+  to {
+    margin-top: 100px;
+    opacity: 0.1;
   }
 }
