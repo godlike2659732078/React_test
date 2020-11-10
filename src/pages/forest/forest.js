@@ -86,7 +86,6 @@ export default class User extends Component {
     this.props.history.push("/forestDetail");
   }
   render() {
-    console.log(this);
     return (
       <div>
         <div className="header_box">

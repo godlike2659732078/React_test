@@ -73,20 +73,7 @@ export default class Neck extends Component {
             Pearl.finance的智能合约已通过SlowMist审核。检查 审核报告此处。
           </p>
         </div>
-        {/* <div className="copy_text">
-          代币地址：<p id="a">FSAFSAFRWRET%$U^GFDSAFSASAw#@e</p>
-          <Icon
-            type="copy"
-            onClick={() => handleCopy(document.getElementById("a").innerHTML)}
-          />
-        </div>
-        <div className="copy_text">
-          代币地址：<p id="b">FSAFSAFRWRET%$U^GFDSAFSASAw#@e</p>
-          <Icon
-            type="copy"
-            onClick={() => handleCopy(document.getElementById("b").innerHTML)}
-          />
-        </div> */}
+        
         <div style={{ display: "flex", justifyContent: "center" }}>
           <button className="gotoJust">
             <a
@@ -104,14 +91,14 @@ export default class Neck extends Component {
             <Col
               xs={{ span: 20 }}
               sm={{ span: 20 }}
-              md={{ span: 10 }}
+              md={{ span: 20 }}
               lg={{ span: 9 }}
               xl={{ span: 9 }}
             >
               <div className={this.state.show == true ? "dragon" : "dragons"}>
                 <div className="bootBox">
                   <div
-                    className="allNumBox"
+                  
                     className={
                       this.state.show == true ? "allNumBox" : "allNumBoxs"
                     }
@@ -131,11 +118,11 @@ export default class Neck extends Component {
                 </div>
               </div>
             </Col>
-            <Col xs={{ span: 20 }} sm={20} md={10} lg={9} xl={9}>
+            <Col xs={{ span: 20 }} sm={20} md={20} lg={9} xl={9}>
               <div className={this.state.show == true ? "dragon" : "dragons"}>
                 <div className="bootBox">
                   <div
-                    className="allNumBox"
+                  
                     className={
                       this.state.show == true ? "allNumBox" : "allNumBoxs"
                     }

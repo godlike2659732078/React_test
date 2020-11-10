@@ -1,7 +1,7 @@
 //home.js
 import React, { Component } from "react";
 import "./home.css";
-import { Row, Col, Icon } from "antd";
+import { Row, Col } from "antd";
 // 引入首页头部组件
 import Neck from "../../components/neck/neck";
 // 引入图标

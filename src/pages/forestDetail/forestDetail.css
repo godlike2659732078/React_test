@@ -33,7 +33,7 @@
 
 .forest_detailBox {
     width: 360px;
-    height: 319px;
+    height: 349px;
     margin-top: 10px;
     background: #fff;
     border-radius: 20px;
@@ -92,7 +92,7 @@
 
 }
 
-.selectBtn {
+.selectBtns {
     width: 80%;
     height: 56px;
     border: none;
@@ -101,11 +101,11 @@
     font-size: 18px;
     font-weight: Bold;
     background: #FFFFFF;
-
+    margin-top: 20px;
     box-shadow: 1px 4px 4px #607dff88;
 }
 
-.selectBtn:hover {
+.selectBtns:hover {
     color: #59ccfa;
     cursor: pointer;
     background: rgb(189, 242, 252);
@@ -194,6 +194,25 @@
 
 .maxValue:hover {
     color: #5fd1fd;
+    cursor: pointer;
+    background: rgb(189, 242, 252);
+}
+
+.submitBtn {
+    width: 80%;
+    height: 56px;
+    border: none;
+    border-radius: 12px;
+    color: #6FD1F8;
+    font-size: 18px;
+    font-weight: Bold;
+    background: #FFFFFF;
+    margin-top: 20px;
+    box-shadow: 1px 4px 4px #607dff88;
+}
+
+.submitBtn:hover {
+    color: #6FD1F8;
     cursor: pointer;
     background: rgb(189, 242, 252);
 }

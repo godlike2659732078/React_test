@@ -62,7 +62,7 @@ export default class User extends React.Component {
                   <p>已获取的珍珠</p>
                 </div>
                 <div className="forestBox_foot">
-                  <Button key="submit" size="large" className="selectBtn">
+                  <Button key="submit" size="large" className="selectBtns">
                     收割
                   </Button>
                 </div>
@@ -83,7 +83,7 @@ export default class User extends React.Component {
                 <div className="forestBox_foot">
                   <Button
                     size="large"
-                    className="selectBtn"
+                    className="selectBtns"
                     onClick={this.showModal}
                   >
                     批准/代币名称

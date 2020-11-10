@@ -16,7 +16,7 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      path: window.location.pathname,
+      path: window.location.hash,
       show: true,
       Url: [
         { id: 1, name: "Telegram", url: "www.baidu.com" },
@@ -47,21 +47,23 @@ export default class App extends React.Component {
   }
   // 渲染完成
   componentDidMount() {
+    console.log(window);
     window.addEventListener("resize", this.handleResize.bind(this)); //监听窗口大小改变
     let clientW = document.documentElement.clientWidth;
     this.handleClientW(clientW, 1040);
-    if (window.location.pathname === "/") {
+    if (window.location.hash === "#/") {
       this.setState({
         //修改初始值
-        path: "/home",
+        path: "#/home",
       });
     }
   }
   gotoHome(params) {
+    console.log(window.location);
     console.log(params);
     this.setState({
       //修改初始值
-      path: window.location.pathname,
+      path: window.location.hash,
     });
   }
   render() {
@@ -69,11 +71,11 @@ export default class App extends React.Component {
       <Menu>
         <Menu.Item>
           <img className="country" src={ENIcon} alt="" />
-         EN
+          EN
         </Menu.Item>
         <Menu.Item>
           <img className="country" src={HKIcon} alt="" />
-         CN
+          CN
         </Menu.Item>
       </Menu>
     );
@@ -88,13 +90,17 @@ export default class App extends React.Component {
               <div className="header">
                 <div className="header_left">
                   <img
-                    style={{ width: "50px", height: "50px",marginRight:"60px" }}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      marginRight: "60px",
+                    }}
                     src={logo}
                     alt=""
                   />
-                  <Menu mode="horizontal"  selectedKeys={[this.state.path]}>
+                  <Menu mode="horizontal" selectedKeys={[this.state.path]}>
                     <Menu.Item
-                      key="/home"
+                      key="#/home"
                       style={{
                         width: "100px",
                         fontSize: "16px",
@@ -104,7 +110,7 @@ export default class App extends React.Component {
                       <Link to="/home">首页</Link>
                     </Menu.Item>
                     <Menu.Item
-                      key="/forest"
+                      key="#/forest"
                       style={{
                         width: "100px",
                         fontSize: "16px",
@@ -114,7 +120,7 @@ export default class App extends React.Component {
                       <Link to="/forest">农场</Link>
                     </Menu.Item>
                     <Menu.Item
-                      key="/rules"
+                      key="#/rules"
                       style={{
                         width: "100px",
                         fontSize: "16px",
@@ -135,7 +141,10 @@ export default class App extends React.Component {
                 >
                   <Acount></Acount>
                   <Dropdown overlay={menu}>
-                    <a className="ant-dropdown-link" href="#">
+                    <a
+                      className="ant-dropdown-link"
+                      style={{ color: "#1890ff" }}
+                    >
                       LANGUAGE <Icon type="down" />
                     </a>
                   </Dropdown>
@@ -158,7 +167,7 @@ export default class App extends React.Component {
                 >
                   <Acount></Acount>
                   <Dropdown overlay={menu}>
-                    <a className="ant-dropdown-link" href="#">
+                    <a className="ant-dropdown-link">
                       LANGUAGE <Icon type="down" />
                     </a>
                   </Dropdown>
@@ -170,13 +179,13 @@ export default class App extends React.Component {
                   defaultSelectedKeys={this.state.path}
                   selectedKeys={[this.state.path]}
                 >
-                  <Menu.Item key="/home" onClick={this.gotoHome.bind(this)}>
+                  <Menu.Item key="#/home" onClick={this.gotoHome.bind(this)}>
                     <Link to="/home">首页</Link>
                   </Menu.Item>
-                  <Menu.Item key="/forest" onClick={this.gotoHome.bind(this)}>
+                  <Menu.Item key="#/forest" onClick={this.gotoHome.bind(this)}>
                     <Link to="/forest">农场</Link>
                   </Menu.Item>
-                  <Menu.Item key="/rules" onClick={this.gotoHome.bind(this)}>
+                  <Menu.Item key="#/rules" onClick={this.gotoHome.bind(this)}>
                     <Link to="/rules">规则</Link>
                   </Menu.Item>
                 </Menu>
