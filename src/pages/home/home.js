@@ -69,6 +69,9 @@ export default class Home extends Component {
   };
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize.bind(this));
+    this.setState = (state, callback) => {
+      return;
+    };
   }
   // 渲染完成
   componentDidMount() {
@@ -83,19 +86,20 @@ export default class Home extends Component {
     }
   }
   render() {
+    let status=this.state.show;
     return (
       <div>
         <Neck></Neck>
         <Row
-          gutter={80}
+          gutter={60}
           className={this.state.show === true ? "antCol" : "showList"}
         >
-          {/* 遍历展示列表数据 */}
+          {/* 遍历首页展示列表数据 */}
           {this.state.showList.map(function (val) {
             return (
-              <Col xs={24} sm={24} md={24} lg={8} xl={8} key={val.id}>
+              <Col xs={24} sm={24} md={12} lg={8} xl={8} key={val.id}>
                 <div className="col_box ">
-                  <img src={val.image} className="showImage" alt="" />
+                  <img src={val.image} className={status==true?"showImage":"showImages"} alt="" />
                   <div className="showBox">
                     <p className="showBoxTitle">{val.name}统计资料</p>
                     <div className="pledge">
@@ -115,7 +119,7 @@ export default class Home extends Component {
                     </div>
                   </div>
 
-                  <img src={underline} className="underline" alt="" />
+                  <img src={underline} className="underline_home" alt="" />
                 </div>
               </Col>
             );

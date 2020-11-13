@@ -44,6 +44,9 @@ export default class Shop extends React.Component {
             <img className="neck_logo" src={logo} alt="" />
           </div>
           <p className="title_text">规则</p>
+          <p className="headText">
+            珍珠将以YFI的形式进行分发：非预前开采，无创始人股份，无风投利益-借凭均等的股权分配，以吸引广泛且视野一致的社区来管理协议和代币的未来.
+          </p>
           <Row gutter={10} type="flex" justify="center">
             <Col
               xs={{ span: 24 }}
@@ -54,17 +57,14 @@ export default class Shop extends React.Component {
             >
               <div className="ruleBox">
                 <div className="rules">
-                  <div className="headText">
-                    珍珠将以YFI的形式进行分发：非预前开采，无创始人股份，无风投利益-借凭均等的股权分配，以吸引广泛且视野一致的社区来管理协议和代币的未来.
-                  </div>
-                  <div className="about">
+                  <div className="about textBox">
                     <p>关于USDt田园</p>
                     <p>
                       我们的开发团队发现TRC-20USDt代币与TRC-20标准无法兼容。尽管如此，我们的开发团队正在努力为Tron
                       USDt代币编写新的定制合同。继续关注.
                     </p>
                   </div>
-                  <div className="problem">
+                  <div className="problem textBox">
                     <p>数字显示延迟</p>
                     <p>问题: 为何网站上的数字显示会出现延迟?</p>
                     <p>
@@ -72,7 +72,7 @@ export default class Shop extends React.Component {
                       Tronlink在显示资产一般都回出现延迟，Tronlink经更新后，更新的数字就能显示在网站上.
                     </p>
                   </div>
-                  <div className="orePool">
+                  <div className="orePool textBox">
                     <p>矿池</p>
                     <p>USDt 5000</p>
                     <p>USDj 2500</p>
@@ -83,7 +83,7 @@ export default class Shop extends React.Component {
                     <p>PEARL-LP 7500</p>
                     <p>添加更多矿池將取決於社區投票。</p>
                   </div>
-                  <div className="address">
+                  <div className="address textBox" >
                     <p>地址</p>
                     {this.state.tokenList.map(function (val) {
                       return (
@@ -96,11 +96,11 @@ export default class Shop extends React.Component {
                       );
                     })}
                   </div>
-                  <div className="timeBox">
+                  <div className="timeBox textBox">
                     <p>代币开采时间表</p>
                     <p>代币开采每轮将为期一周.</p>
                   </div>
-                  <div className="government">
+                  <div className="government textBox">
                     <p>治理</p>
                     <p>
                       剩余的珍珠代币将被锁定在合同中，并完全由珍珠持有者管理，例如，投票决定增加更多的发行矿池.

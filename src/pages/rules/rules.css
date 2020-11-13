@@ -3,22 +3,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0px;
+    margin: 16px 0px;
 }
 
 .rules {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    padding: 24px;
-    background-color: rgba(255, 255, 255, 0.61);
 }
 
 .headText {
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.863);
-    line-height: 20px;
-    padding: 15px 0px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 22px;
+    padding: 15px 10%;
+    text-align: center;
+
+}
+
+.textBox {
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255);
+    margin-bottom: 16px;
+    text-align: center;
 }
 
 .about p:first-child {
@@ -27,14 +35,15 @@
     font-weight: bold;
     line-height: 24px;
     padding: 15px 0px;
-    color:rgba(0, 0, 0, 0.863);;
+    color: rgba(0, 0, 0, 0.863);
+
 }
 
 .about p:last-child {
     margin: 0px;
-    font-size: 20px;
-    color:rgba(0, 0, 0, 0.863);;
-    line-height: 20px;
+    font-size: 16px;
+    color: #666;
+    line-height: 22px;
     padding: 15px 0px;
 }
 
@@ -44,14 +53,16 @@
     font-weight: bold;
     line-height: 24px;
     padding: 15px 0px;
-    color:rgba(0, 0, 0, 0.863);;
+    color: rgba(0, 0, 0, 0.863);
+
 }
 
 .problem p {
     margin: 0px;
-    font-size: 20px;
-    color:rgba(0, 0, 0, 0.863);;
-    line-height: 20px;
+    font-size: 16px;
+    color: #666;
+    ;
+    line-height: 22px;
     padding: 15px 0px;
 }
 
@@ -61,14 +72,15 @@
     font-weight: bold;
     line-height: 24px;
     padding: 15px 0px;
-    color:rgba(0, 0, 0, 0.863);;
+    color: rgba(0, 0, 0, 0.863);
+
 }
 
 .orePool p {
     margin: 0px;
-    font-size: 20px;
-    color:rgba(0, 0, 0, 0.863);;
-    line-height: 20px;
+    font-size: 16px;
+    color: #666;
+    line-height: 22px;
 
 }
 
@@ -78,20 +90,23 @@
     font-weight: bold;
     line-height: 24px;
     padding: 15px 0px;
-    color:rgba(0, 0, 0, 0.863);;
+    color: rgba(0, 0, 0, 0.863);
+
 }
 
 .token_box p:first-child {
-    font-size: 18px;
-    color:rgba(0, 0, 0, 0.863);;
+    font-size: 16px;
+    color: #666;
+
     margin-bottom: 10px;
     padding: 0px;
 }
 
 .token_box div {
     margin-bottom: 10px;
-    color:rgba(0, 0, 0, 0.863);;
-    font-size: 18px;
+    color: #999;
+
+    font-size: 16px;
     -webkit-word-break: break-all;
     -moz-word-break: break-all;
     -ms-word-break: break-all;
@@ -106,12 +121,13 @@
     font-weight: bold;
     line-height: 24px;
     padding: 15px 0px;
-    color:rgba(0, 0, 0, 0.863);;
+    color: rgba(0, 0, 0, 0.863);
+
 }
 
 .timeBox p:last-child {
-    font-size: 20px;
-    color:rgba(0, 0, 0, 0.863);;
+    font-size: 16px;
+    color: #666;
     padding: 0px;
 }
 
@@ -121,12 +137,12 @@
     font-weight: bold;
     line-height: 24px;
     padding: 15px 0px;
-    color:rgba(0, 0, 0, 0.863);;
+    color: rgba(0, 0, 0, 0.863);
+
 }
 
 .government p:last-child {
-    font-size: 20px;
-    color:rgba(0, 0, 0, 0.863);;
-
+    font-size: 16px;
+    color: #666;
     padding: 0px;
 }

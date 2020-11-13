@@ -82,6 +82,7 @@ export default class User extends Component {
     };
     this.props.onRef(this);
   }
+  // 携带参数跳转
   gotoDetail() {
     this.props.history.push("/forestDetail");
   }
@@ -122,26 +123,24 @@ export default class User extends Component {
                     </div>
                     <div className="forestBox_foot">
                       <Button
-                        type="primary"
                         size="large"
-                        className={val.status == 2 ? "selectBtn" : "hide"}
+                        className={val.status == 2 ? "willBtn" : "hide"}
                       >
                         即将推出
                       </Button>
-                      <Button
-                        type="primary"
-                        size="large"
-                        className={val.status == 2 ? " hide" : " selectBtn"}
+                      <Link
+                        to={{
+                          pathname: "/forestDetail",
+                          state: { name: "aaa", price: "bbb" },
+                        }}
                       >
-                        <Link
-                          to={{
-                            pathname: "/forestDetail",
-                            state: { name: "aaa", price: "bbb" },
-                          }}
+                        <button
+                          // size="large"
+                          className={val.status == 2 ? " hide" : " selectBtn"}
                         >
                           选择
-                        </Link>
-                      </Button>
+                        </button>
+                      </Link>
                     </div>
                   </div>
 

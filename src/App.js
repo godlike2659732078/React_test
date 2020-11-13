@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./assets/img/logo.png";
+import logo from "./assets/img/logo1.png";
 import Acount from "./components/wallet/wallet";
 import "./App.css";
 import "antd/dist/antd.css";
@@ -44,6 +44,9 @@ export default class App extends React.Component {
   };
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize.bind(this));
+    this.setState = (state, callback) => {
+      return;
+    };
   }
   // 渲染完成
   componentDidMount() {
@@ -68,6 +71,7 @@ export default class App extends React.Component {
   }
   render() {
     const menu = (
+      // 语言切换下拉框
       <Menu>
         <Menu.Item>
           <img className="country" src={ENIcon} alt="" />
@@ -83,6 +87,7 @@ export default class App extends React.Component {
       <div>
         <Router>
           <Layout className="layout">
+            {/* 头部导航栏 */}
             <Header
               style={{ padding: "0 30px", height: "68px" }}
               className={this.state.show === true ? "" : "hide"}
@@ -98,6 +103,7 @@ export default class App extends React.Component {
                     src={logo}
                     alt=""
                   />
+                  {/* 导航条 */}
                   <Menu mode="horizontal" selectedKeys={[this.state.path]}>
                     <Menu.Item
                       key="#/home"
@@ -139,7 +145,10 @@ export default class App extends React.Component {
                     width: "250px",
                   }}
                 >
+                  {/* 钱包组件 */}
                   <Acount></Acount>
+
+                  {/* 语言切换下拉框 */}
                   <Dropdown overlay={menu}>
                     <a
                       className="ant-dropdown-link"
@@ -151,6 +160,7 @@ export default class App extends React.Component {
                 </div>
               </div>
             </Header>
+            {/* 小窗口导航栏 */}
             <Header
               style={{ padding: "0 10px", lineHeight: "40px" }}
               className={this.state.show === false ? "" : "hide"}
@@ -174,6 +184,7 @@ export default class App extends React.Component {
                 </div>
               </div>
               <div className="navBox">
+                {/* 导航条 */}
                 <Menu
                   mode="horizontal"
                   defaultSelectedKeys={this.state.path}
@@ -191,10 +202,12 @@ export default class App extends React.Component {
                 </Menu>
               </div>
             </Header>
+            {/* 页面主题内容部分 */}
             <Content className="layout_content" style={{ padding: "0 10%" }}>
               <div className={this.state.show === false ? "hidden" : "ghost"}>
                 <div className="ghostBody"></div>
               </div>
+              {/* 路由 */}
               {routes.map((route, key) => {
                 if (route.exact) {
                   return (
@@ -231,6 +244,7 @@ export default class App extends React.Component {
                 }
               })}
             </Content>
+            {/* 底部栏 */}
             <Footer
               style={{
                 textAlign: "center",

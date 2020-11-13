@@ -12,7 +12,6 @@ export default class User extends React.Component {
   constructor(props) {
     super(props);
     console.log(this.props);
-
     this.props.onRef(this);
   }
   componentDidMount() {
@@ -22,15 +21,18 @@ export default class User extends React.Component {
     loading: false,
     visible: false,
   };
+  // 点击弹出质押代币事件
   showModal = () => {
     this.setState({
       visible: true,
     });
   };
+  //
   handleOk = () => {
     this.setState({ loading: true });
     this.setState({ loading: false, visible: false });
   };
+  // 点击关闭弹窗
   handleCancel = () => {
     this.setState({ visible: false });
   };
@@ -45,8 +47,9 @@ export default class User extends React.Component {
           <p className="title_text">PEARL/TRX LP</p>
           <p className="text_introduce">存入 PEARL/TRX LP 并获取珍珠.</p>
         </div>
+        {/* 响应式质押以及矿池余额展示部分 */}
         <Row
-          gutter={0}
+          gutter={20}
           className={this.state.show === true ? "antCol" : "showList"}
           type="flex"
           justify="center"
@@ -62,9 +65,9 @@ export default class User extends React.Component {
                   <p>已获取的珍珠</p>
                 </div>
                 <div className="forestBox_foot">
-                  <Button key="submit" size="large" className="selectBtns">
+                  <button key="submit" size="large" className="selectBtns">
                     收割
-                  </Button>
+                  </button>
                 </div>
               </div>
               <img src={underline} className="underline" alt="" />
@@ -81,13 +84,9 @@ export default class User extends React.Component {
                   <p>PEARL/TRX 已质押</p>
                 </div>
                 <div className="forestBox_foot">
-                  <Button
-                    size="large"
-                    className="selectBtns"
-                    onClick={this.showModal}
-                  >
+                  <button className="selectBtns" onClick={this.showModal}>
                     批准/代币名称
-                  </Button>
+                  </button>
                 </div>
               </div>
               <img src={underline} className="underline" alt="" />

@@ -39,6 +39,9 @@ export default class Neck extends Component {
   };
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize.bind(this));
+    this.setState = (state, callback) => {
+      return;
+    };
   }
   // 渲染完成
   componentDidMount() {
@@ -86,13 +89,13 @@ export default class Neck extends Component {
             </a>
           </button>
         </div>
-        <div style={{}}>
-          <Row gutter={80} type="flex" justify="center">
+        <div >
+          <Row gutter={60} type="flex" justify="center">
             <Col
               xs={{ span: 20 }}
               sm={{ span: 20 }}
               md={{ span: 20 }}
-              lg={{ span: 9 }}
+              lg={{ span: 20 }}
               xl={{ span: 9 }}
             >
               <div className={this.state.show == true ? "dragon" : "dragons"}>
@@ -118,7 +121,7 @@ export default class Neck extends Component {
                 </div>
               </div>
             </Col>
-            <Col xs={{ span: 20 }} sm={20} md={20} lg={9} xl={9}>
+            <Col xs={{ span: 20 }} sm={20} md={20} lg={20} xl={9}>
               <div className={this.state.show == true ? "dragon" : "dragons"}>
                 <div className="bootBox">
                   <div

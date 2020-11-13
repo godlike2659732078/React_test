@@ -17,7 +17,15 @@
     margin: auto;
 
 }
-
+.showImages{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: -50px;
+    right: 0;
+    margin: auto;
+}
 .ant-col {
     margin-bottom: 10px;
     display: flex;
@@ -89,15 +97,18 @@
 
 }
 
-.underline {
+.underline_home {
     display: block;
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .col_box {
+    min-width: 320px;
     width: 359px;
     height: 419px;
     margin-top: 80px;
