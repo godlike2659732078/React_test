@@ -1,8 +1,8 @@
 //home.js
-import React, { Component } from "react";
+import React from "react";
 import logo from "../../assets/img/logo.png";
 import "./forestDetail.css";
-import { Row, Col, Icon, Button, Modal, Input } from "antd";
+import { Row, Col, Button, Modal, Input } from "antd";
 // 引入图标
 import show1 from "../../assets/img/show1.png";
 

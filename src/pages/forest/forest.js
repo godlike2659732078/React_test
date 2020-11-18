@@ -9,9 +9,8 @@ import show2 from "../../assets/img/show2.png";
 import show3 from "../../assets/img/show3.png";
 // 列表模块底部装饰
 import underline from "../../assets/img/underline.png";
-import Neck from "../../components/neck/neck";
 //引入路由组件
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default class User extends Component {
   constructor(props) {
     super(props);
@@ -143,7 +142,6 @@ export default class User extends Component {
                       </Link>
                     </div>
                   </div>
-
                   <img src={underline} className="underline" alt="" />
                 </div>
               </Col>

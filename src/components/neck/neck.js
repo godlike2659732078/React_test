@@ -5,8 +5,7 @@ import numLeft from "../../assets/img/numRight.png";
 import numRight from "../../assets/img/numLeft.png";
 
 import "./neck.css";
-import { Icon, message, Row, Col } from "antd";
-import copy from "copy-to-clipboard";
+import {  Row, Col } from "antd";
 
 // function handleCopy(value) {
 //   if (copy(value)) {
@@ -108,7 +107,7 @@ export default class Neck extends Component {
                   >
                     <img src={numLeft} alt="" />
                     <div
-                      className="boot_text"
+         
                       className={
                         this.state.show == true ? "boot_text" : "boot_texts"
                       }
@@ -132,7 +131,7 @@ export default class Neck extends Component {
                   >
                     <img src={numRight} alt="" />
                     <div
-                      className="boot_text"
+               
                       className={
                         this.state.show == true ? "boot_text" : "boot_texts"
                       }

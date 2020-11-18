@@ -5,7 +5,7 @@ import "./App.css";
 import "antd/dist/antd.css";
 import ENIcon from "./assets/img/english.png";
 import HKIcon from "./assets/img/hongk.png";
-import { Layout, Menu, Breadcrumb, Icon, Dropdown } from "antd";
+import { Layout, Menu, Icon, Dropdown } from "antd";
 import routes from "./react-router/router_test";
 //引入路由组件
 import { HashRouter as Router, Route, Link } from "react-router-dom";
@@ -24,36 +24,15 @@ export default class App extends React.Component {
         { id: 3, name: "Twitter", url: "#" },
         { id: 4, name: "Medium", url: "#" },
       ],
+      group: "1,2,3,4,5",
     };
   }
-  handleClientW = (width, num) => {
-    if (width < num) {
-      this.setState({
-        show: false,
-      });
-    } else {
-      this.setState({
-        show: true,
-      });
-    }
-  };
-  handleResize = (e) => {
-    let e_width = e.target.innerWidth;
-    this.handleClientW(e_width, 700);
-    // console.log('浏览器窗口大小改变事件', e.target.innerWidth);
-  };
+
   componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize.bind(this));
-    this.setState = (state, callback) => {
-      return;
-    };
+
   }
   // 渲染完成
   componentDidMount() {
-    console.log(window);
-    window.addEventListener("resize", this.handleResize.bind(this)); //监听窗口大小改变
-    let clientW = document.documentElement.clientWidth;
-    this.handleClientW(clientW, 1040);
     if (window.location.hash === "#/") {
       this.setState({
         //修改初始值
@@ -90,7 +69,7 @@ export default class App extends React.Component {
             {/* 头部导航栏 */}
             <Header
               style={{ padding: "0 30px", height: "68px" }}
-              className={this.state.show === true ? "" : "hide"}
+              className="head_max"
             >
               <div className="header">
                 <div className="header_left">
@@ -150,12 +129,12 @@ export default class App extends React.Component {
 
                   {/* 语言切换下拉框 */}
                   <Dropdown overlay={menu}>
-                    <a
+                    <span
                       className="ant-dropdown-link"
                       style={{ color: "#1890ff" }}
                     >
                       LANGUAGE <Icon type="down" />
-                    </a>
+                    </span>
                   </Dropdown>
                 </div>
               </div>
@@ -163,7 +142,7 @@ export default class App extends React.Component {
             {/* 小窗口导航栏 */}
             <Header
               style={{ padding: "0 10px", lineHeight: "40px" }}
-              className={this.state.show === false ? "" : "hide"}
+              className="head_min"
             >
               <div className="header">
                 <img src={logo} alt="" />
@@ -177,9 +156,9 @@ export default class App extends React.Component {
                 >
                   <Acount></Acount>
                   <Dropdown overlay={menu}>
-                    <a className="ant-dropdown-link">
+                    <span className="ant-dropdown-link">
                       LANGUAGE <Icon type="down" />
-                    </a>
+                    </span>
                   </Dropdown>
                 </div>
               </div>
@@ -204,7 +183,9 @@ export default class App extends React.Component {
             </Header>
             {/* 页面主题内容部分 */}
             <Content className="layout_content" style={{ padding: "0 10%" }}>
-              <div className={this.state.show === false ? "hidden" : "ghost"}>
+              <div className={this.state.show === false ? "hidden" : "ghost"}
+              className="sunBox"
+              >
                 <div className="ghostBody"></div>
               </div>
               {/* 路由 */}
