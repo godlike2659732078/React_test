@@ -1,6 +1,6 @@
 //home.js
 import React from "react";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/numRight.png";
 import "./forestDetail.css";
 import { Row, Col, Button, Modal, Input } from "antd";
 // 引入图标
@@ -13,9 +13,19 @@ export default class User extends React.Component {
     super(props);
     console.log(this.props);
     this.props.onRef(this);
+    this.state = {
+      // 对应代币余额
+      num: "100.0000000",
+      iptNum: "",
+    };
   }
   componentDidMount() {
     console.log(this);
+  }
+  getNum() {
+    this.setState({
+      iptNum:this.state.num
+    })
   }
   state = {
     loading: false,
@@ -117,11 +127,13 @@ export default class User extends React.Component {
             </div>
             <div className="singleBalance">
               <p>代币余额:</p>
-              <p>0.00000000</p>
+        <p>{this.state.num}</p>
             </div>
             <div className="pledgeNumBox">
-              <Input className="pledgeNum" />
-              <Button className="maxValue">最大值</Button>
+              <Input className="pledgeNum" value={this.state.iptNum} />
+              <Button className="maxValue" onClick={this.getNum.bind(this)}>
+                最大值
+              </Button>
             </div>
           </div>
         </Modal>
