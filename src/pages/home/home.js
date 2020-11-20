@@ -13,7 +13,7 @@ import underline from "../../assets/img/underline.png";
 export default class Home extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.state = {};
     this.props.onRef(this);
     // 数据
@@ -86,7 +86,7 @@ export default class Home extends Component {
     }
   }
   render() {
-    let status=this.state.show;
+    let status = this.state.show;
     return (
       <div>
         <Neck></Neck>
@@ -99,7 +99,11 @@ export default class Home extends Component {
             return (
               <Col xs={24} sm={24} md={12} lg={8} xl={8} key={val.id}>
                 <div className="col_box ">
-                  <img src={val.image} className={status==true?"showImage":"showImages"} alt="" />
+                  <img
+                    src={val.image}
+                    className={status === true ? "showImage" : "showImages"}
+                    alt=""
+                  />
                   <div className="showBox">
                     <p className="showBoxTitle">{val.name}统计资料</p>
                     <div className="pledge">

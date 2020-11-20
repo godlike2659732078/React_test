@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 export default class User extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.state = {
       showList: [
         {
@@ -105,8 +105,7 @@ export default class User extends Component {
               <Col xs={24} sm={24} md={24} lg={8} xl={8} key={val.id}>
                 <div className="forest_box">
                   <div
-                    className="bbb"
-                    className={val.status == 0 ? "bbb" : "hide"}
+                    className={val.status === 0 ? "bbb" : "hide"}
                   >
                     <Icon className="endIcon" type="clock-circle" />
                     <span>结束 </span>
@@ -123,7 +122,7 @@ export default class User extends Component {
                     <div className="forestBox_foot">
                       <Button
                         size="large"
-                        className={val.status == 2 ? "willBtn" : "hide"}
+                        className={val.status === 2 ? "willBtn" : "hide"}
                       >
                         即将推出
                       </Button>
@@ -135,7 +134,7 @@ export default class User extends Component {
                       >
                         <button
                           // size="large"
-                          className={val.status == 2 ? " hide" : " selectBtn"}
+                          className={val.status === 2 ? " hide" : " selectBtn"}
                         >
                           选择
                         </button>

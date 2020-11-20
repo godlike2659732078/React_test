@@ -41,8 +41,6 @@ export default class App extends React.Component {
     }
   }
   gotoHome(params) {
-    console.log(window.location);
-    console.log(params);
     this.setState({
       //修改初始值
       path: window.location.hash,
@@ -183,8 +181,8 @@ export default class App extends React.Component {
             </Header>
             {/* 页面主题内容部分 */}
             <Content className="layout_content" style={{ padding: "0 10%" }}>
-              <div className={this.state.show === false ? "hidden" : "ghost"}
-              className="sunBox"
+              <div className={this.state.show === false ? "hidden" : "ghost sunBox"}
+            
               >
                 <div className="ghostBody"></div>
               </div>

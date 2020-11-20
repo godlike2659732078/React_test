@@ -11,28 +11,6 @@
     align-items: center;
 }
 
-.title_text {
-    font-size: 38px;
-    font-weight: Bold;
-    text-align: center;
-    color: "blue";
-    color: #FFFFFF;
-    text-shadow: 2px 1px 2px #212E87;
-}
-
-.title_texts {
-    font-size: 28px;
-    font-weight: Bold;
-    text-align: center;
-    color: "blue";
-    color: #FFFFFF;
-    text-shadow: 2px 1px 2px #212E87;
-}
-
-/* .neck_logo {
-    width: auto;
-    height: auto;
-} */
 
 .text_ {
     color: #fff;
@@ -41,93 +19,12 @@
     margin: 0%;
 }
 
-.dragon {
-    width: 100%;
-    height: 167px;
-    display: flex;
-    justify-content: center;
-}
-
-.dragons {
-    width: 100%;
-    height: 107px;
-    display: flex;
-    justify-content: center;
-}
-
 .allNumBox {
     width: 100%;
     height: 90%;
     display: flex;
     align-items: center;
     padding: 0px 28px;
-}
-
-.boot_text {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.boot_text p:first-child {
-    font-size: 18px;
-    color: #999;
-    font-weight: 600;
-    margin: 0px;
-    display: block;
-    width: 100%;
-
-}
-
-.boot_text p:last-child {
-    font-size: 36px;
-    color: #6180FF;
-    font-weight: 600;
-    margin: 0px;
-}
-
-.allNumBox img {
-    width: 74px;
-    height: 74px;
-    margin-right: 20px;
-}
-
-/* 移动端数量模块样式 */
-.allNumBoxs {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    padding: 0px 10px;
-}
-
-.boot_texts {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.boot_texts p:first-child {
-    font-size: 14px;
-    color: #999;
-    font-weight: 600;
-    margin: 0px;
-    display: block;
-    width: 100%;
-
-}
-
-.boot_texts p:last-child {
-    font-size: 24px;
-    color: #6180FF;
-    font-weight: 600;
-    margin: 0px;
-}
-
-.allNumBoxs img {
-    width: 44px;
-    height: 44px;
-    margin-right: 10px;
 }
 
 
@@ -170,4 +67,115 @@ button:focus {
 .gotoJust:hover {
     cursor: pointer;
     background: rgb(189, 242, 252);
+}
+
+@media screen and (min-width:700px) {
+    .title_text {
+        font-size: 38px;
+        font-weight: Bold;
+        text-align: center;
+        color: "blue";
+        color: #FFFFFF;
+        text-shadow: 2px 1px 2px #212E87;
+    }
+
+    .dragon {
+        width: 100%;
+        height: 167px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .allNumBox {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        padding: 0px 28px;
+    }
+
+    .allNumBox img {
+        width: 74px;
+        height: 74px;
+        margin-right: 20px;
+    }
+
+    .boot_text {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .boot_text p:first-child {
+        font-size: 18px;
+        color: #999;
+        font-weight: 600;
+        margin: 0px;
+        display: block;
+        width: 100%;
+
+    }
+
+    .boot_text p:last-child {
+        font-size: 36px;
+        color: #6180FF;
+        font-weight: 600;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    .title_text {
+        font-size: 28px;
+        font-weight: Bold;
+        text-align: center;
+        color: "blue";
+        color: #FFFFFF;
+        text-shadow: 2px 1px 2px #212E87;
+    }
+
+    .dragon {
+        width: 100%;
+        height: 107px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .allNumBox {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+    }
+
+    .allNumBox img {
+        width: 44px;
+        height: 44px;
+        margin-right: 10px;
+    }
+
+    .boot_text {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .boot_text p:first-child {
+        font-size: 14px;
+        color: #999;
+        font-weight: 600;
+        margin: 0px;
+        display: block;
+        width: 100%;
+
+    }
+
+    .boot_text p:last-child {
+        font-size: 24px;
+        color: #6180FF;
+        font-weight: 600;
+        margin: 0px;
+    }
 }
